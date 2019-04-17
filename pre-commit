@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Make sure my email is set properly
+useremail=$(git config user.email)
+if [ "$useremail" != "lucas.rosinelli@gmail.com" ]
+then
+	cat <<\EOF
+Error: user.email not set to "lucas.rosinelli@gmail.com"
+EOF
+	exit 1
+fi
+
+# Make sure my name is set properly
+username=$(git config user.name)
+if [ "$username" != "Lucas Rosinelli da Rocha" ]
+then
+	cat <<\EOF
+Error: user.name not set to "Lucas Rosinelli da Rocha"
+EOF
+	exit 1
+fi
